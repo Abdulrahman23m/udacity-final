@@ -5,7 +5,11 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 DATABASE_PATH = os.environ['DATABASE_URL']
+if DATABASE_PATH.startswith("postgres://"):
+    uri = DATABASE_PATH.replace("postgres://", "postgresql://")
+print(DATABASE_PATH)
 
+engine = create_engine(DATABASE_PATH, echo=True)
 db = SQLAlchemy()
 
 def setup_db(app, database_path=DATABASE_PATH):
