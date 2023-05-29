@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/abdulrahmant/Desktop/udacity 4/final/capstone/starter/myvenv"
+VIRTUAL_ENV="/Users/abdulrahmant/Desktop/udacity 4/capstone/starter/myvenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

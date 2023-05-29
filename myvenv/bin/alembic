@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/abdulrahmant/Desktop/udacity 4/final/capstone/starter/myvenv/bin/python3.10" "$0" "$@"
+'''exec' "/Users/abdulrahmant/Desktop/udacity 4/capstone/starter/myvenv/bin/python3.10" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

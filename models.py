@@ -6,7 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 DATABASE_PATH = os.environ['DATABASE_URL']
 
-
 db = SQLAlchemy()
 
 def setup_db(app, database_path=DATABASE_PATH):
