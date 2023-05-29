@@ -18,7 +18,8 @@ def setup_db(app, database_path=DATABASE_PATH):
     db.app = app
 
     db.init_app(app)
-    db.create_all()
+    with app.app_context():
+        db.create_all()
 
 
 class Actors(db.Model):
