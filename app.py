@@ -3,7 +3,7 @@ from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import setup_db, Actors, Movies
-from auth import AuthError, requires_auth
+# from auth import AuthError, requires_auth
 
 
 def create_app(test_config=None):
@@ -28,7 +28,7 @@ def create_app(test_config=None):
   #For each requests we must check auth for the user by @requires_auth
 
   @app.route('/actors', methods=['GET'])
-  @requires_auth(permission='get:actors')
+#   @requires_auth(permission='get:actors')
   def get_actors(payload):
         try:
             actors = Actors.query.order_by(Actors.id).all()
