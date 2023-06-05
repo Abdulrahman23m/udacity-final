@@ -46,20 +46,20 @@ def create_app(test_config=None):
         except Exception:
             abort(422)
 
-  @app.route('/actors/<int:id>',methods=['GET'])
-  @requires_auth(permission='get:actors')
-  def get_actor_by_id(payload,id):
-      try:
-          actor = Actors.query.get(id)
-          return jsonify({
-                'success': True,
-                'name': actor.name
+#   @app.route('/actors/<int:id>',methods=['GET'])
+#   @requires_auth(permission='get:actors')
+#   def get_actor_by_id(payload,id):
+#       try:
+#           actor = Actors.query.get(id)
+#           return jsonify({
+#                 'success': True,
+#                 'name': actor.name
 
            
               
-          })
-      except:
-          abort(422)
+#           })
+#       except:
+#           abort(422)
 
 # To patch an actor u must resend all the data via an json object
 # Ex. if u want to only update the name u also have to resedn the age and gender
@@ -116,21 +116,21 @@ def create_app(test_config=None):
             })
         except Exception:
             abort(422)
-  @app.route('/movies/<int:id>', methods=['GET'])
-  @requires_auth(permission='get:movies')
-  def get_movie_by_id(payload,id):
-        try:
-            movie = Movies.query.get(id)
-            if movie is None:
-                abort(422)
+#   @app.route('/movies/<int:id>', methods=['GET'])
+#   @requires_auth(permission='get:movies')
+#   def get_movie_by_id(payload,id):
+#         try:
+#             movie = Movies.query.get(id)
+#             if movie is None:
+#                 abort(422)
 
-            movie = format_records(movie)
-            return jsonify({
-                'success': True,
-                'movie': movie,
-            })
-        except Exception:
-            abort(422)
+#             movie = format_records(movie)
+#             return jsonify({
+#                 'success': True,
+#                 'movie': movie,
+#             })
+#         except Exception:
+#             abort(422)
 
   @app.route('/movies', methods=['POST'])
   @requires_auth(permission='post:movies')
