@@ -118,7 +118,7 @@ def create_app(test_config=None):
             abort(422)
   @app.route('/movies/<int:id>', methods=['GET'])
   @requires_auth(permission='get:movies')
-  def get_movies(payload,id):
+  def get_movie_by_id(payload,id):
         try:
             movie = Movies.query.get(id)
             if movie is None:
