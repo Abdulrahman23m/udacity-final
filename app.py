@@ -32,7 +32,7 @@ def create_app(test_config=None):
   #For each requests we must check auth for the user by @requires_auth
 
   @app.route('/actors', methods=['GET'])
-#   @requires_auth(permission='get:actors')
+  @requires_auth(permission='get:actors')
   def get_actors():
         try:
             actors = Actors.query.order_by(Actors.id).all()
