@@ -4,7 +4,7 @@ export EXCITED="true"
 
 #Auth0
 export AUTH0_DOMAIN="ud23.us.auth0.com"
-export ALGORITHMS="RS256"
+export ALGORITHMS=['RS256']
 export API_AUDIENCE="casting"
 
 echo "setup.sh script executed successfully!"
