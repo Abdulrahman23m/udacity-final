@@ -33,7 +33,7 @@ def create_app(test_config=None):
 
   @app.route('/actors', methods=['GET'])
 #   @requires_auth(permission='get:actors')
-  def get_actors(payload):
+  def get_actors():
         try:
             actors = Actors.query.order_by(Actors.id).all()
             total_actors = len(actors)
