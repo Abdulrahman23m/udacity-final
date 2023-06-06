@@ -18,8 +18,8 @@ AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
 ALGORITHMS = os.environ.get('ALGORITHMS')
 API_AUDIENCE = os.environ.get('API_AUDIENCE')
 
-
-
+print(AUTH0_DOMAIN)
+print(ALGORITHMS)
 #for faliuers 
 class AuthError(Exception):
     def __init__(self, error, status_code):
