@@ -194,6 +194,50 @@ def create_app(test_config=None):
           })
       except:
           abort(422)
+
+  @app.errorhandler(404)
+  def not_found(error):
+        return jsonify({
+            "success": False,
+            "error": 404,
+            "message": """Not Found. Resource Not found or
+            Web page doesn't exist"""
+        }), 404
+
+  @app.errorhandler(400)
+  def bad_request(error):
+        return jsonify({
+            "success": False,
+            "error": 400,
+            "message": """Bad Request. The request may be
+            incorrect or corrupted"""
+        }), 400
+
+  @app.errorhandler(422)
+  def unprocessable(error):
+        return jsonify({
+            "success": False,
+            "error": 422,
+            "message": """Unprocessable Entity.
+            An error occured while processing your request"""
+        }), 422
+
+  @app.errorhandler(500)
+  def internal_error(error):
+        return jsonify({
+            "success": False,
+            "error": 500,
+            "message": "Internal Server Error Occured"
+        }), 500
+
+    # error handler for AuthError
+  @app.errorhandler(AuthError)
+  def auth_error(error):
+        return jsonify({
+            "success": False,
+            "error": error.status_code,
+            "message": error.error['description']
+        }), error.status_code
   
 
   return app
